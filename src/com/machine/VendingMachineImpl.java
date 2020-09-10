@@ -125,9 +125,8 @@ public class VendingMachineImpl implements VendingMachine {
         if (selectedProduct == null) {
             throw new ProductNotFoundException("Please select slot");
         }
-        if (selectedProduct.getPrice() <= insertedMoney) {
-            getProductAndChange();
-        } else if (currentUserCard != null) {
+        if (selectedProduct.getPrice() <= insertedMoney
+                || currentUserCard != null) {
             getProductAndChange();
         }
     }
@@ -142,10 +141,15 @@ public class VendingMachineImpl implements VendingMachine {
             evaluateChange(bucket, insertedMoney - selectedProduct.getPrice());
         }
         decrementSlotInventory(selectedSlotKey);
-        displayMessage(String.format("\nSuccess, your bucket :\n%s", bucket.toString()));
+        displayMessage(String.format("\nSuccess, your bucket :\n%s \n", bucket.toString()));
         reset();
     }
 
+    /**
+     * determine if customer insert card to pay
+     *
+     * @return
+     */
     private boolean isCardPayment() {
         return currentUserCard != null;
     }
