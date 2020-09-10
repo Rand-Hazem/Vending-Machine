@@ -1,19 +1,22 @@
 # Vending Machine
 ### Java implementation
 
-**Specifications**
+### Specifications
+
 * VM payment can be using note(20$ and 50$), coins(10c • 20c • 50c • $10) or card
 * VM has 25 slots in 5*5 grid
 * VM spesify product required through keypad (user must enter)
 
-**In implementation**
+### In implementation
+
 * Fill the machine tith products(snacks), each row has spesific snak
 * Fill money inventory that already in VM using Math.Random()
 * Give product a random price
 
-**Basic Flow**
+### Basic Flow
 
-1- customer wants to purchase snacks
+1.customer wants to purchase snacks
+
 2.The customer selects a number by pressing on the keypad
 
 3.The VM displays a message that the snack is available for the selected number and displays its price
@@ -34,5 +37,8 @@
 
 11.Then, the VM dispenses change
 
-**UML Diagram**
+### UML Diagram
 ![image](https://imgur.com/Gnf5UL6.jpg)
+
+### Test case
+![image](https://imgur.com/g67AiD3)
